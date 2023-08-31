@@ -1,4 +1,4 @@
-site_name: My Markdown Test
+site_name: Test MkDocs
 
 theme:
   name: material
@@ -27,24 +27,24 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
-features:
-  - navigation.tabs
-  - navigation.tabs.sticky
-  - navigation.sections
-  - navigation.instant
-  - navigation.instant.prefetch
-  - navigation.tracking
-  - navigation.expand
-  - navigation.prune
-  - toc.integrate
-  - navigation.top
-  - search.suggest
-  - search.highlight
-  - content.tabs.link
-  - content.code.annotation
-  - content.code.copy
-  - content.action.edit
-  - content.action.view
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.expand
+    - navigation.prune
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -54,8 +54,25 @@ markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
       generic: true
+  - tables
   - footnotes
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.mark
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/icones.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
